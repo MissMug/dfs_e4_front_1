@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# DFS_Front_E4_Diallo_Faure_Projet1
+
+
+Application type ToDo List.  
+Choix fait de repartir du code initial repris de l'application transmise en cours.
+
+* Animations de types SCSS et CSS avec classes
+
+---
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Prerequisites
 
-In the project directory, you can run:
+Things you need to install the software and how to install
 
-### `npm start`
+```
+$ npm install
+$ npm start
+```
+---
+## FONCTIONNALITES
+---
+### Animation sur le titre  
+![Titre Animation](./src/Images/AnimationTitre.PNG)  
+:arrow_forward: TodoList.js
+```
+        <h1
+          style={{
+            animation: "slidein 3s ease-in 4s infinite alternate both running",
+          }}
+        >
+          Todo List <span>Les taches du jour</span>
+        </h1>
+```  
+:arrow_forward: lié à Todo.css  
+```  
+  @keyframes slidein {
+    from {
+      margin-left: 50%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+```
+- Interaction utilisateur
+> A l'ouverture de l'application, le titre de l'application est mis en évidence.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Type d'animations CSS utilisée
+> SCSS avec balise style
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Explication de l'implémentation
+> * Slidein : nom de l'animation défini en @keyframes  
+> * 3s : temps pour faire 1 cycle d'animation  
+> * Ease-in : fonction - slow at the beginning, fast/abrupt at the end  
+> * 1s : retard au lancement de l'animation  
+> * Infinite : animation-iteration-count - se reproduit à l'infini  
+> * alternate: animation-direction  
+> * Both : animation-fill-mode - extension des propriétés de l'animation dans les deux directions  
+> * Running : animation-play-state : animation est en cours d'exécution  
+---
+### Animation lors de l'édition d'une tâche ou de l'ajout d'une tâche 
+![LabelNewToDo](./src/Images/EditionTask.PNG)  
+:arrow_forward: Todo.css
+```
+animation-name: couleur, essuieglace, taille;
+    animation-duration: 10s;
+```  
+:arrow_forward: couleur, essuieglace et taille définis dans les @keyframes Todo.css  
+```
+  @keyframes couleur{
+    from{background-color: orange;}
+    50%{background-color: purple;}
+    to{background-color: rgba(255, 255, 255, 0.1);}
+  }
+  
+  @keyframes taille{
+    from{width: 100%}
+    50%{width: 70%;}
+    to{width: 126.5%;}
+  }
+  @keyframes essuieglace{
+    from{margin-top: 0px;}
+    50%{margin-top: 100px;}
+    to{margin-top : 0px;}
+  }
+```  
+- Interaction utilisateur
+> Met en animation l'ajout d'une tâche dans la liste des tâches ou lors de l'édition d'une tâche
 
-### `npm test`
+- Type d'animations CSS utilisée
+> CSS avec classes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Explication de l'implémentation
+> L'animation-name prend en paramètre les @keyframes qui permettent de paramètrer l'état initial, l'état de transition et l'état final de l'animation.  
+> L'animation duration permet de déterminer le temps de cycle d'une animation complète.
+---
+### Mise en évidence des icons-boutons  
+![Icons](./src/Images/ButtonsAnimation.png)  
+:arrow_forward: Todo.css
 
-### `npm run build`
+```
+  .Todo-buttons button :hover {
+    transform: scale(1.5);
+    color: aquamarine;
+  }
+```  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Interaction utilisateur
+> Mise en évidence des icons actions sur les tâches déjà crées
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Intégration framework utilisé
+> Classes CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Explication de l'implémentation
+> Au survol de l'icon, l'icon grossit de 1,5 fois et change de couleur et redeviens à taille normale lorsqu'il n'est plus survolé. Sans besoin d'activer la fonction associée au bouton (à l'icon ici)  
+---
+## Running the tests
 
-### `npm run eject`
+Not Available
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Authors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **DIALLO Thierno - E4 - ESTIAM**
+- **FAURE Alice - E4 - ESTIAM** 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Not Available

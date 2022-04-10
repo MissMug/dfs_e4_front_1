@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Todo from "./Todo";
 import NewTodoForm from "./TodoForm";
-import { motion } from "framer-motion";
 
 import { v4 as uuidv4 } from "uuid";
 import "./TodoList.css";
@@ -59,7 +58,7 @@ function TodoList() {
       <div className="TodoList">
         <h1
           style={{
-            animation: "3s ease-in 1s infinite reverse both running slidein",
+            animation: "slidein 3s ease-in 4s infinite alternate both running",
           }}
         >
           Todo List <span>Les taches du jour</span>

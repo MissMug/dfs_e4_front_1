@@ -6,7 +6,7 @@
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
     animation-name: couleur, essuieglace, taille;
-    animation-duration: 10s, 2s;
+    animation-duration: 10s;
   }
   
   .Todo-task {
@@ -53,13 +53,14 @@
 
   .Todo-buttons button :hover {
     transform: scale(1.5);
+    color: aquamarine;
   }
   
   .Todo-edit-form {
     display: flex;
     flex-wrap: wrap;
     animation-name: couleur, essuieglace, taille;
-    animation-duration: 10s, 2s;
+    animation-duration: 10s ;
   }
   
   .Todo-edit-form label {
@@ -86,7 +87,7 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     margin-left: 5px;
     cursor: pointer;
-    transform: background 0.2s ease-out;
+    transform: 0.2s ease-out;
   }
   
   .Todo-edit-form button:hover {
@@ -102,13 +103,11 @@
   .toShow {
     animation-duration: 3s;
     animation-name: slidein;
-    /*animation-iteration-count: infinite;
-    animation-direction: alternate;*/
   }
   
   @keyframes slidein {
     from {
-      margin-left: 100%;
+      margin-left: 50%;
       width: 300%;
     }
   
@@ -122,13 +121,13 @@
   @keyframes couleur{
     from{background-color: orange;}
     50%{background-color: purple;}
-    to{background-color: orange;}
+    to{background-color: rgba(255, 255, 255, 0.1);}
   }
   
   @keyframes taille{
     from{width: 100%}
-    50%{width: 50%;}
-    to{width: 100%;}
+    50%{width: 70%;}
+    to{width: 126.5%;}
   }
   @keyframes essuieglace{
     from{margin-top: 0px;}
